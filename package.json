@@ -1,0 +1,38 @@
+{
+  "name": "crypto-saga-bot",
+  "version": "1.0.0",
+  "description": "Crypto Telegram Bot",
+  "license": "MIT",
+  "author": "seigneur",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint *.js test/*.js",
+    "test": "mocha"
+  },
+  "eslintConfig": {
+    "extends": "techinasia-base",
+    "env": {
+      "mocha": true,
+      "node": true
+    },
+    "rules": {
+      "no-unused-expressions": 0,
+      "func-names": 0,
+      "strict": 0,
+      "max-len": 0
+    }
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.18.0",
+    "eslint-config-techinasia-base": "^0.8.0",
+    "eslint-plugin-import": "^2.22.1",
+    "mocha": "^8.2.1"
+  },
+  "dependencies": {
+    "moment": "^2.29.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}

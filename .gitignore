@@ -1,0 +1,13 @@
+# Files
+token.js
+deploy.sh
+
+# IDE
+.idea
+
+# Build
+node_modules
+
+# Zip
+Archive.zip
+telegram-bot.zip
