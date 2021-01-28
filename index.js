@@ -82,28 +82,41 @@ exports.handler = (event, context) => {
   }
 
   if (chatId) {
+    console.log('Begin this message with the chat id:',chatId);
     processCommand.then((response) => {
-      const processTelegram = sendMessageToTelegram(chatId, response);
+    console.log('Processing done this message with the chat id:',chatId, ':', response);
+
+      const processTelegram =  sendMessageToTelegram(chatId, response);
+      // return sendMessageToTelegram(chatId, response);
       processTelegram.then(() => {
+        
+    console.log('Success chat id:',chatId);
+
         context.succeed();
-      }).catch(() => {
+      }).catch((e) => {
+        console.log('Fail chat id:',chatId, e);
+
         context.fail();
+
       });
     }).catch((error) => {
       const processTelegram = sendMessageToTelegram(chatId, error.message);
+    console.log('in catch chat id:',chatId);
+
       processTelegram.then(() => {
         context.succeed();
       }).catch(() => {
         context.fail();
       });
-    });
+return processTelegram;
+  });
   } else {
     processCommand.then(() => {
       context.succeed();
     }).catch(() => {
       context.fail();
     });
+    return processCommand
   }
 
-  return processCommand;
 };
