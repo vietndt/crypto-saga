@@ -38,11 +38,9 @@ eg.
 /bin price BTCUSDT 
 returns the price of BTC w.r.t USDT
 
-/bin short <Asset> <Amount> <price> <leverage-ratio>
-go short 
+/bin buy asset (BTC, ETH) -> convert all holding to said form
 
-/bin long <Asset> <Amount> <price> <leverage-ratio>
-go long
+/bin buy hold -> Convert to USD
 
 # Future
 

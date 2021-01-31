@@ -101,7 +101,7 @@ exports.handler = (event, context) => {
       });
     }).catch((error) => {
       const processTelegram = sendMessageToTelegram(chatId, error.message);
-    console.log('in catch chat id:',chatId);
+    console.log('in catch chat id:',chatId, error.message);
 
       processTelegram.then(() => {
         context.succeed();

@@ -52,7 +52,7 @@ module.exports = {
     if (description.length > 0) {
       message += `<em>${description}</em>\n`;
     }
-    if (fields.length > 0) {
+    if (fields) {
       message += `<pre>${this.parseFields(fields)}</pre>`;
     }
 
@@ -60,11 +60,9 @@ module.exports = {
   },
   parseFields(fields) {
     const data = [];
-    fields.forEach((entry) => {
-      if (entry.title && entry.title.length > 0) {
-        data.push(`${entry.title}: ${entry.value}`);
-      }
-    });
+    for (const [key, value] of Object.entries(fields)) {
+        data.push(`${key}: ${value}`);
+      };
 
     return data.join("\n"); // eslint-disable-line quotes
   },
